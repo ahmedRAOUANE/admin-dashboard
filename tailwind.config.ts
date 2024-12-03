@@ -9,8 +9,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        // Light mode colors
+        background: "rgba(var(--background-color))",
+        foreground: "rgba(var(--foreground-color))",
+        primary:    "rgba(var(--primary-color))",
+        secondary:  "rgba(var(--secondary-color))",
+        danger:     "rgba(var(--danger-color))",
+        gray:       "rgba(var(--gray-color))",
+        green:      "rgba(var(--green-color))",
+        white:      "rgba(var(--white-color))",
+      },
+      fontFamily: {
+        jaldi: ['Jaldi', 'sans-serif'],
       },
     },
   },
