@@ -1,3 +1,5 @@
+"use client";
+
 import { ThemeType } from "@/utils/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
@@ -5,8 +7,17 @@ interface StateType {
     currentTheme: ThemeType
 }
 
+// Helper function to get the initial theme
+const getInitialTheme = (): ThemeType => {
+    if (typeof window !== "undefined") {
+        return (localStorage.getItem("theme") as ThemeType) || "light";
+    }
+
+    return "light"; // Default theme for server-side rendering
+};
+
 const initialState: StateType = {
-    currentTheme: localStorage.getItem("theme") as ThemeType || "light",
+    currentTheme: getInitialTheme(),
 };
 
 const themeSlice = createSlice({
@@ -15,7 +26,10 @@ const themeSlice = createSlice({
     reducers: {
         setTheme: (state, action: PayloadAction<ThemeType>) => {
             state.currentTheme = action.payload;
-            localStorage.setItem("theme", action.payload);
+
+            if (typeof window !== "undefined") {
+                localStorage.setItem("theme", action.payload);
+            }
         },
     },
 });

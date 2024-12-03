@@ -1,7 +1,10 @@
-const HomePage = () => {
+export default function Home() {
   return (
-      <h1>HomePage</h1>
-  )
-}
+    <div className="">
+      <main className="">
+        <h1 className="text-3xl font-bold">Home</h1>
 
-export default HomePage
+      </main>
+    </div>
+  );
+}
