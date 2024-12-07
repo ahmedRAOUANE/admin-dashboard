@@ -4,7 +4,7 @@ import { RootState } from "@/store";
 import { setTheme } from "@/store/themeSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-const ToggleThemeBtn = () => {
+const ToggleThemeBtn = ({ className }: { className?: string }) => {
     const theme = useSelector((state: RootState) => state.theme.currentTheme);
     const dispatch = useDispatch();
 
@@ -15,7 +15,7 @@ const ToggleThemeBtn = () => {
     };
 
     return (
-        <label className="relative flex items-center cursor-pointer">
+        <label className={`relative flex items-center cursor-pointer ${className}`}>
             {/* Checkbox for toggling theme */}
             <input
                 type="checkbox"

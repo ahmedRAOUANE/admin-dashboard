@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@kinde-oss/kinde-auth-nextjs": "^2.4.6",
     "@reduxjs/toolkit": "^2.4.0",
     "@types/chart.js": "^2.9.41",
     "chart.js": "^4.4.6",

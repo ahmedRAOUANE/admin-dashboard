@@ -1,5 +1,22 @@
 export type ThemeType = "light" | "dark";
 
+// !category and question properties are required
+export type CategoryType = {
+    _id?: string,
+    categoryName: string,
+    description: string,
+}
+
+export type QuestionType = {
+    question: string,
+    answer: string,
+    _id?: string,
+    category?: string,
+    categoryObject: CategoryType,
+    createdAt?: string,
+    updatedAt?: string
+}
+
 export type WorkflowType = {
     _id?: string,
     name?: string,
@@ -24,12 +41,6 @@ export type FaqType = {
     isRequired?: boolean,
     isActive?: boolean,
     answer?: string
-}
-
-export type CategoryType = {
-    _id: string,
-    name: string,
-    faqs: FaqType[]
 }
 
 export interface TableRowType extends WorkflowType, FaqType {

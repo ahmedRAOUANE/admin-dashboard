@@ -5,9 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const sidebarLinks = [
+    // { ImgSrc: "/", name: "Home", href: "/" },
     { ImgSrc: "/dashbord.svg", name: "Dashboard", href: "/dashboard" },
-    { ImgSrc: "/dashbord.svg", name: "Workflows", href: "/workflows" },
-    { ImgSrc: "/faQ.svg", name: "FAQs", href: "/faqs" },
+    { ImgSrc: "/globe.svg", name: "Categories", href: "/categories" },
+    // { ImgSrc: "/dashbord.svg", name: "Workflows", href: "/workflows" },
+    { ImgSrc: "/faQ.svg", name: "questions", href: "/questions" },
     // { ImgSrc: "/Reports.svg", name: "Reports", href: "/reports" },
     { ImgSrc: "/settings.svg", name: "Settings", href: "/settings" },
 ];

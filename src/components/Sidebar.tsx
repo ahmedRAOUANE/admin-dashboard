@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import StyledBtn from "./StyledBtn";
 import SidebarLinks from "./SidebarLinks";
+import Footer from "./Footer";
+import LogoutBtn from "./LogoutBtn";
 
 const Sidebar = () => {
     return (
@@ -13,17 +14,15 @@ const Sidebar = () => {
 
             <SidebarLinks />
 
-            <div className="flex flex-col items-center gap-4 md:w-full">
-                <StyledBtn className="bg-gray dark:bg-gray-dark shadow rounded-full px-4 md:py-2 w-full justify-center">
+            <div className="flex flex-col items-center gap-2 md:w-full">
+                {/* <StyledBtn className="bg-gray dark:bg-gray-dark shadow rounded-full px-4 md:py-2 w-full justify-center">
                     Hide
-                </StyledBtn>
+                </StyledBtn> */}
 
-                {
-                    // !this link for logout feature if exists
-                    /* <Link href="/" className="bg-gray shadow rounded-full px-4 md:py-2 w-full justify-center">
-                      <Image src={"/logout.svg"} alt="logout" width={40} height={40} />
-                    </Link> */
-                }
+                {/* // !this link for logout feature if exists */}
+                <LogoutBtn /> 
+
+                <Footer className="hidden md:block" />
             </div>
         </aside>
     );

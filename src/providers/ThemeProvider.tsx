@@ -16,7 +16,7 @@ const ThemeProvider = ({ children, className }: { children: React.ReactNode, cla
     }, [currentTheme]);
 
     return (
-        <body className={`${className} ${hidratedTheme}`}>
+        <body className={`${className} ${hidratedTheme} text-foreground`}>
             {children}
         </body>
     )

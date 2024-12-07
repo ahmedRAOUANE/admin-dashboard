@@ -1,10 +1,14 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
-import StyledBtn from "../StyledBtn";
-import { deleteFaq } from "@/actions/faqs";
-import { deleteWorkflow } from "@/actions/workflows";
 import useModal from "@/hooks/useModal";
+
+// server actions
+import { handleDeleteCategoryAction } from "@/actions/categoryAction";
+import { handleDeleteQuestionAction } from "@/actions/questionActions";
+
+// components
+import StyledBtn from "../StyledBtn";
 import Link from "next/link";
 
 const OptionsBtns = () => {
@@ -17,14 +21,15 @@ const OptionsBtns = () => {
     const { closeModal } = useModal();
 
     const handleDelete = async () => {
-        if (currentPage === "workflows") {
-            await deleteWorkflow(currentItemId);
-            router.push("/workflows");
-        } else if (currentPage === "faqs") {
-            await deleteFaq(currentItemId);
-            router.push("/faqs");
+        if (currentPage === "categories") {
+            await handleDeleteCategoryAction(currentItemId);
+            router.push("/categories")
+        } else if (currentPage === "questions") {
+            await handleDeleteQuestionAction(currentItemId);
+            router.push("/questions");
         } else {
-            return console.log("Invalid page");
+            console.log("Invalid page");
+            throw new Error("Invalid page - OptionsBtns");
         }
 
         closeModal();
